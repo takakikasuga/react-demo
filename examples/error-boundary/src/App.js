@@ -5,6 +5,7 @@ import Page2 from './components/Page2';
 import Page3 from './components/Page3';
 import Page4 from './components/Page4';
 import Page5 from './components/Page5';
+import CounterApp from './components/Count';
 
 const onError = (error, info) => {
   // ここでログ出力などを行う
@@ -14,13 +15,16 @@ const onError = (error, info) => {
 
 function App() {
   return (
-    <ErrorBoundary FallbackComponent={ErrorFallback} onError={onError}>
-      <Page1 />
-      <Page2 />
-      <Page3 />
-      <Page4 />
-      <Page5 />
-    </ErrorBoundary>
+    <>
+      <ErrorBoundary FallbackComponent={ErrorFallback} onError={onError}>
+        <Page1 />
+        <Page2 />
+        <Page3 />
+        <Page4 />
+        <Page5 />
+      </ErrorBoundary>
+      <CounterApp />
+    </>
   );
 }
 export default App;
